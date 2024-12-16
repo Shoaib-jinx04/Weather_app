@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Result</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather in <%= city %> Tomorrow</h1>
+        <% if (forecast) { %>
+            <p>Temperature: <%= forecast.main.temp %>°C</p>
+            <p>Weather: <%= forecast.weather[0].description %></p>
+            <p>Chance of Rain: <%= forecast.pop * 100 %>%</p>
+        <% } else { %>
+            <p>No forecast data available for tomorrow at 12:00 PM.</p>
+        <% } %>
+        <a href="/">Check another city</a>
+    </div>
+</body>
+</html>
